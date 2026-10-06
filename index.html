@@ -17,7 +17,7 @@
         body, html {
             width: 100%; height: 100%;
             overflow: hidden;
-            background: #121212;
+            background: #0f2b1d;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -31,8 +31,8 @@
             display: flex;
             flex-direction: column;
             box-shadow: 0 20px 60px rgba(0,0,0,0.8);
-            border-radius: 16px;
-            background: #1a1a1a;
+            border-radius: 20px;
+            background: #1b4332;
         }
 
         canvas {
@@ -48,35 +48,34 @@
             display: none;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
+            padding: 15px 20px;
             width: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
         }
         .btn-header {
-            width: 48px; height: 48px;
-            background: linear-gradient(145deg, #ffe17d, #d4a73b);
-            border: 2px solid #fff; border-radius: 14px;
-            box-shadow: 0 5px 0 #946f19, 0 8px 15px rgba(0,0,0,0.3);
+            width: 46px; height: 46px;
+            background: linear-gradient(145deg, #ffe066, #fab005);
+            border: 2px solid #ffffff; border-radius: 14px;
+            box-shadow: 0 4px 0 #b58100, 0 6px 12px rgba(0,0,0,0.3);
             display: flex; justify-content: center; align-items: center;
-            font-weight: 900; font-size: 20px; color: #4a3300;
-            cursor: pointer; transition: transform 0.1s, box-shadow 0.1s;
+            font-weight: 900; font-size: 20px; color: #3f2a00;
+            cursor: pointer; transition: transform 0.1s;
         }
-        .btn-header:active { transform: translateY(4px); box-shadow: 0 1px 0 #946f19; }
+        .btn-header:active { transform: translateY(3px); box-shadow: 0 1px 0 #b58100; }
         
         #level-info-container {
             display: flex; flex-direction: column; align-items: center;
         }
         #level-badge {
-            background: linear-gradient(145deg, #ffe17d, #d4a73b);
-            border: 2px solid #fff; border-radius: 25px;
-            padding: 8px 30px; box-shadow: 0 5px 0 #946f19, 0 8px 15px rgba(0,0,0,0.3);
-            font-weight: 900; font-size: 18px; color: #4a3300;
+            background: linear-gradient(145deg, #ffe066, #fab005);
+            border: 2px solid #ffffff; border-radius: 20px;
+            padding: 6px 28px; box-shadow: 0 4px 0 #b58100, 0 6px 12px rgba(0,0,0,0.3);
+            font-weight: 900; font-size: 17px; color: #3f2a00;
             letter-spacing: 1px; text-transform: uppercase;
         }
         #theme-title {
-            font-size: 11px; font-weight: 800; color: #ffffff;
-            margin-top: 5px; text-shadow: 0 2px 5px rgba(0,0,0,0.8);
-            letter-spacing: 1.5px; text-transform: uppercase;
+            font-size: 11px; font-weight: 900; color: #ffffff;
+            margin-top: 5px; letter-spacing: 1.5px; text-transform: uppercase;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
         }
 
         .fullscreen-overlay {
@@ -85,79 +84,68 @@
             z-index: 1000;
         }
 
-        /* LOADING SCREEN DENGAN LATAR ABU-ABU */
         #loading-screen { 
-            background: linear-gradient(135deg, #2c3e50, #1a252f, #11181e); 
-            color: #fff; padding: 20px; text-align: center;
+            background: linear-gradient(135deg, #0d2818, #1b4332); 
+            color: #d8f3dc; padding: 20px; text-align: center;
         }
         .loading-logo {
-            font-size: 36px; font-weight: 900; color: #f1c40f;
-            text-shadow: 0 0 25px rgba(241,196,15,0.7);
-            margin-bottom: 30px; letter-spacing: 2px;
+            font-size: 34px; font-weight: 900; color: #52b788;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            margin-bottom: 25px; letter-spacing: 2px;
         }
         .progress-bar-container {
-            width: 80%; height: 22px; background: rgba(0,0,0,0.6);
-            border-radius: 12px; border: 2px solid #f1c40f;
+            width: 80%; height: 22px; background: rgba(0,0,0,0.4);
+            border-radius: 12px; border: 2px solid #74c69d;
             padding: 2px; overflow: hidden;
-            box-shadow: 0 0 15px rgba(241,196,15,0.4);
         }
         #progress-fill { 
             width: 0%; height: 100%; 
-            background: linear-gradient(90deg, #f1c40f, #2ecc71); 
+            background: linear-gradient(90deg, #74c69d, #2d6a4f); 
             border-radius: 8px; transition: width 0.2s ease-out;
         }
-        .loading-text { margin-top: 18px; font-size: 15px; font-weight: bold; color: #f1c40f; letter-spacing: 1px; }
+        .loading-text { margin-top: 15px; font-size: 14px; font-weight: bold; color: #d8f3dc; }
 
-        /* MENU UTAMA DENGAN BACKGROUND BLUR (background.png) */
         #main-menu { 
             display: none; z-index: 900; 
-            background: url('assets/background.png') center/cover no-repeat;
+            background: url('assets/background.png') center/cover no-repeat, #0d2818;
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
         }
         #main-menu::before {
             content: "";
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.45);
+            background: rgba(13, 40, 24, 0.5);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             z-index: -1;
         }
 
-        .game-title-container {
-            text-align: center; margin-bottom: 40px; position: relative;
-        }
+        .game-title-container { text-align: center; margin-bottom: 35px; }
         .game-title {
-            font-size: 42px; font-weight: 900; line-height: 1.1;
-            background: linear-gradient(180deg, #fff 0%, #f1c40f 50%, #e67e22 100%);
+            font-size: 40px; font-weight: 900; line-height: 1.1;
+            background: linear-gradient(180deg, #d8f3dc 0%, #52b788 100%);
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 6px 0px #19381f) drop-shadow(0 10px 20px rgba(0,0,0,0.5));
-            animation: titlePulse 2.5s infinite ease-in-out;
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.6));
             letter-spacing: 2px;
-        }
-        @keyframes titlePulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.04); }
         }
 
         .btn-main {
-            background: linear-gradient(145deg, #2ecc71, #27ae60);
-            color: white; border: 2px solid #abebc6; border-radius: 20px;
-            padding: 18px; font-size: 22px; font-weight: 900; margin: 10px 0; width: 240px;
-            box-shadow: 0 8px 0 #1e8449, 0 12px 25px rgba(0,0,0,0.4);
+            background: linear-gradient(145deg, #40916c, #1b4332);
+            color: white; border: 2px solid #74c69d; border-radius: 18px;
+            padding: 16px; font-size: 20px; font-weight: 900; margin: 8px 0; width: 220px;
+            box-shadow: 0 6px 0 #0d2818, 0 10px 20px rgba(0,0,0,0.4);
             cursor: pointer; transition: all 0.1s; letter-spacing: 1px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
-        .btn-main:active { transform: translateY(6px); box-shadow: 0 2px 0 #1e8449; }
+        .btn-main:active { transform: translateY(4px); box-shadow: 0 2px 0 #0d2818; }
         .btn-setting { 
-            background: linear-gradient(145deg, #f1c40f, #f39c12); 
-            border-color: #f9e79f;
-            box-shadow: 0 8px 0 #b7950b, 0 12px 25px rgba(0,0,0,0.4); 
+            background: linear-gradient(145deg, #ffe066, #fab005); 
+            border-color: #fff; color: #3f2a00;
+            box-shadow: 0 6px 0 #b58100, 0 10px 20px rgba(0,0,0,0.4); 
+            text-shadow: none;
         }
-        .btn-setting:active { box-shadow: 0 2px 0 #b7950b; }
 
-        /* MODAL & SETTING OVERLAY */
         .modal {
             display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.5); 
@@ -166,54 +154,51 @@
             align-items: center; justify-content: center; z-index: 1100;
         }
         .modal-card {
-            background: linear-gradient(145deg, #ffffff, #f0f3f4); 
-            border-radius: 25px; padding: 45px 25px 30px; text-align: center;
-            width: 85%; max-width: 340px; position: relative; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5); border: 3px solid #fff;
+            background: #ffffff; 
+            border-radius: 24px; padding: 40px 25px 25px; text-align: center;
+            width: 85%; max-width: 320px; position: relative; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5); border: 3px solid #fff;
         }
         .modal-badge {
-            position: absolute; top: -22px; left: 50%; transform: translateX(-50%);
-            background: linear-gradient(145deg, #f1c40f, #f39c12); 
-            border: 3px solid #fff; border-radius: 25px;
-            padding: 8px 30px; font-weight: 900; font-size: 18px; color: #4a3300; 
-            box-shadow: 0 5px 0 #b7950b; white-space: nowrap;
+            position: absolute; top: -20px; left: 50%; transform: translateX(-50%);
+            background: linear-gradient(145deg, #ffe066, #fab005); 
+            border: 3px solid #fff; border-radius: 20px;
+            padding: 6px 24px; font-weight: 900; font-size: 16px; color: #3f2a00; 
+            box-shadow: 0 4px 0 #b58100; white-space: nowrap;
         }
-        .modal-msg { color: #2c3e50; font-weight: 800; font-size: 20px; margin-bottom: 25px; }
+        .modal-msg { color: #1b4332; font-weight: 800; font-size: 18px; margin-bottom: 20px; }
 
-        .modal-actions { display: flex; justify-content: center; gap: 20px; }
+        .modal-actions { display: flex; justify-content: center; gap: 15px; }
         .btn-icon {
-            width: 60px; height: 60px; 
-            background: linear-gradient(145deg, #f1c40f, #d4ac0d); 
-            border: 2px solid #fff; border-radius: 18px;
-            box-shadow: 0 6px 0 #9a7d0a; display: flex; justify-content: center; align-items: center; cursor: pointer;
+            width: 54px; height: 54px; 
+            background: linear-gradient(145deg, #ffe066, #fab005); 
+            border: 2px solid #fff; border-radius: 16px;
+            box-shadow: 0 5px 0 #b58100; display: flex; justify-content: center; align-items: center; cursor: pointer;
         }
-        .btn-icon:active { transform: translateY(5px); box-shadow: 0 1px 0 #9a7d0a; }
-        .btn-icon svg { width: 32px; height: 32px; fill: #4a3300; }
+        .btn-icon:active { transform: translateY(4px); box-shadow: 0 1px 0 #b58100; }
+        .btn-icon svg { width: 28px; height: 28px; fill: #3f2a00; }
 
-        .setting-row { display: flex; justify-content: space-between; align-items: center; margin: 18px 0; color: #2c3e50; font-weight: bold; }
-        input[type=range] { accent-color: #f39c12; }
+        .setting-row { display: flex; justify-content: space-between; align-items: center; margin: 15px 0; color: #1b4332; font-weight: bold; }
+        input[type=range] { accent-color: #40916c; }
     </style>
 </head>
 <body>
 
 <div id="game-container">
-    <!-- LOADING SCREEN -->
     <div id="loading-screen" class="fullscreen-overlay">
         <div class="loading-logo">MOUSE MAZE 3D</div>
         <div class="progress-bar-container"><div id="progress-fill"></div></div>
-        <p id="loading-text" class="loading-text">Menyiapkan dunia 3D... 0%</p>
+        <p id="loading-text" class="loading-text">Memuat visual HD... 0%</p>
     </div>
 
-    <!-- MAIN MENU -->
     <div id="main-menu" class="fullscreen-overlay">
         <div class="game-title-container">
-            <div class="game-title">MOUSE MAZE<br>3D TRAPPED</div>
+            <div class="game-title">MOUSE MAZE<br>TRAPPED</div>
         </div>
         <button id="btn-play-menu" class="btn-main">PLAY</button>
         <button id="btn-setting-menu" class="btn-main btn-setting">SETTING</button>
     </div>
 
-    <!-- UI HEADER GAMEPLAY -->
     <div id="ui-header">
         <button class="btn-header" id="btn-sound">🔊</button>
         <div id="level-info-container">
@@ -223,10 +208,8 @@
         <button class="btn-header" id="btn-pause">||</button>
     </div>
 
-    <!-- CANVAS GAME -->
     <canvas id="game-canvas"></canvas>
 
-    <!-- MODAL HASIL -->
     <div id="game-modal" class="modal">
         <div class="modal-card">
             <div id="modal-badge" class="modal-badge">GAME OVER</div>
@@ -243,7 +226,6 @@
         </div>
     </div>
 
-    <!-- MODAL PAUSE / SETTING -->
     <div id="pause-modal" class="modal">
         <div class="modal-card">
             <div class="modal-badge">PENGATURAN</div>
@@ -256,13 +238,15 @@
                 <input type="range" id="sfx-vol" min="0" max="1" step="0.1" value="1.0">
             </div>
             <br>
-            <button class="btn-main btn-setting" id="btn-resume" style="width:100%; padding: 14px; font-size: 18px; margin: 0;">KEMBALI</button>
-            <button class="btn-main" id="btn-quit" style="width:100%; padding: 14px; font-size: 18px; margin: 12px 0 0 0; background: linear-gradient(145deg, #e74c3c, #c0392b); border-color: #f5b7b1; box-shadow: 0 6px 0 #7b241c;">KELUAR</button>
+            <button class="btn-main btn-setting" id="btn-resume" style="width:100%; padding: 12px; font-size: 16px; margin: 0;">KEMBALI</button>
+            <button class="btn-main" id="btn-quit" style="width:100%; padding: 12px; font-size: 16px; margin: 10px 0 0 0; background: linear-gradient(145deg, #e74c3c, #c0392b); border-color: #f5b7b1; box-shadow: 0 5px 0 #7b241c;">KELUAR</button>
         </div>
     </div>
 </div>
 
 <script>
+// @ts-nocheck
+
 var imgAssets = {};
 var audioAssets = {};
 
@@ -289,8 +273,7 @@ for (var audioKey in assetSources.audio) {
     if (audioKey === 'bgm') audioAssets[audioKey].loop = true;
 }
 
-// LOADING SCREEN 20 DETIK
-var loadingDuration = 20000; 
+var loadingDuration = 1000; 
 var startTime = Date.now();
 
 var loadingInterval = setInterval(function() {
@@ -301,7 +284,7 @@ var loadingInterval = setInterval(function() {
     var loadingText = document.getElementById('loading-text');
     
     if (progressFill) progressFill.style.width = progress + '%';
-    if (loadingText) loadingText.innerText = 'Menyiapkan dunia 3D... ' + progress + '%';
+    if (loadingText) loadingText.innerText = 'Memuat visual HD... ' + progress + '%';
 
     if (progress >= 100) {
         clearInterval(loadingInterval);
@@ -310,9 +293,9 @@ var loadingInterval = setInterval(function() {
             var mainMenu = document.getElementById('main-menu');
             if (loadingScreen) loadingScreen.style.display = 'none';
             if (mainMenu) mainMenu.style.display = 'flex';
-        }, 300);
+        }, 150);
     }
-}, 50);
+}, 30);
 
 var sfxVolume = 1.0;
 
@@ -328,39 +311,6 @@ function playAudio(key) {
     }
 }
 
-var THEMES = [
-    { 
-        name: "Spring Meadow", 
-        bgTop: "#4facfe", bgBottom: "#00f2fe", 
-        topLight: "#72d572", topDark: "#52be52", sideColor: "#5c3a21", 
-        particleType: "butterfly" 
-    },
-    { 
-        name: "Snowy Winter", 
-        bgTop: "#83a4d4", bgBottom: "#b6fbff", 
-        topLight: "#e0f7fa", topDark: "#b2ebf2", sideColor: "#455a64", 
-        particleType: "snow",
-        hasSnowCap: true
-    },
-    { 
-        name: "Summer Desert", 
-        bgTop: "#ff9966", bgBottom: "#ff5e62", 
-        topLight: "#f4d03f", topDark: "#d4ac0d", sideColor: "#9a7d0a", 
-        particleType: "dust" 
-    },
-    { 
-        name: "Autumn Woods", 
-        bgTop: "#3a1c71", bgBottom: "#d76d77", 
-        topLight: "#e59866", topDark: "#dc7d32", sideColor: "#6e2c00", 
-        particleType: "redLeaf" 
-    }
-];
-
-function getThemeByLevel(lvl) {
-    var index = Math.floor((lvl - 1) / 5) % THEMES.length;
-    return THEMES[index];
-}
-
 function getSavedLevel() {
     var saved = localStorage.getItem('mouse_maze_level');
     return saved ? parseInt(saved, 10) : 1;
@@ -370,66 +320,108 @@ function saveLevel(lvl) {
     localStorage.setItem('mouse_maze_level', lvl.toString());
 }
 
-// PERBANYAK JUMLAH BLOK (10x10)
-var ROWS = 10; 
-var COLS = 10;
+var ROWS = 11; 
+var COLS = 11;
 var currentLevel = getSavedLevel();
 
-function BlockCell(r, c) {
-    this.r = r; 
-    this.c = c; 
-    this.blocked = false; 
-    this.height = 0;
-    this.targetHeight = 0;
-    this.x = 0; 
-    this.y = 0;
+var THEMES = [
+    { 
+        title: "SPRING MEADOW", 
+        bgGradient: ["#1e4620", "#0a1f12"], 
+        grassTop1: "#aacc00", 
+        grassTop2: "#80b918", 
+        wallFront: "#805b10",
+        wallSide: "#5c3d00",
+        stroke: "rgba(255, 255, 255, 0.4)"
+    },
+    { 
+        title: "EMERALD VALLEY", 
+        bgGradient: ["#134e4a", "#042f2e"], 
+        grassTop1: "#2dd4bf", 
+        grassTop2: "#0f766e", 
+        wallFront: "#1e3a8a",
+        wallSide: "#172554",
+        stroke: "rgba(204, 251, 241, 0.5)"
+    },
+    { 
+        title: "SUMMER FOREST", 
+        bgGradient: ["#14532d", "#052e16"], 
+        grassTop1: "#4ade80", 
+        grassTop2: "#16a34a", 
+        wallFront: "#854d0e",
+        wallSide: "#422006",
+        stroke: "rgba(220, 252, 231, 0.5)"
+    },
+    { 
+        title: "AUTUMN GROVE", 
+        bgGradient: ["#7c2d12", "#360707"], 
+        grassTop1: "#fbbf24", 
+        grassTop2: "#d97706", 
+        wallFront: "#9a3412",
+        wallSide: "#431407",
+        stroke: "rgba(254, 243, 199, 0.5)"
+    }
+];
+
+class BlockCell {
+    constructor(r, c) {
+        this.r = r; 
+        this.c = c; 
+        this.blocked = false; 
+        this.x = 0; 
+        this.y = 0;
+        this.elevation = 0;
+        this.targetElevation = 0;
+    }
 }
 
 var particles = [];
 
-function initParticles(type) {
+function initParticles() {
     particles = [];
+    var colors = ['#ffffff', '#fef08a', '#86efac', '#a5f3fc'];
     for (var i = 0; i < 30; i++) {
         particles.push({
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
             size: Math.random() * 4 + 2,
-            speedX: (Math.random() - 0.5) * 1.5,
-            speedY: Math.random() * 1.5 + 0.5,
-            color: type === 'snow' ? '#ffffff' : (type === 'dust' ? '#f5b041' : '#f4d03f')
+            speedX: (Math.random() - 0.5) * 0.8,
+            speedY: Math.random() * 0.7 + 0.3,
+            rotation: Math.random() * Math.PI * 2,
+            color: colors[Math.floor(Math.random() * colors.length)]
         });
     }
 }
 
-function updateAndDrawParticles(type) {
+function updateAndDrawParticles() {
     ctx.save();
     particles.forEach(function(p) {
         p.x += p.speedX;
         p.y += p.speedY;
+        p.rotation += 0.02;
 
         if (p.y > canvas.height) p.y = -10;
         if (p.x > canvas.width) p.x = 0;
         if (p.x < 0) p.x = canvas.width;
 
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rotation);
         ctx.fillStyle = p.color;
+        ctx.globalAlpha = 0.5;
         ctx.beginPath();
-        if (type === 'butterfly') {
-            ctx.ellipse(p.x, p.y, p.size, p.size * 0.5, Math.PI / 4, 0, Math.PI * 2);
-        } else {
-            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        }
+        ctx.ellipse(0, 0, p.size, p.size * 0.5, 0, 0, Math.PI * 2);
         ctx.fill();
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
     });
     ctx.restore();
 }
 
 var grid = [];
-var mousePos = { r: 4, c: 4 };
+var mousePos = { r: 5, c: 5 };
 var animatedMousePos = { x: 0, y: 0 };
 var isPaused = false;
 var gameOver = false;
-var blockWidth = 44;
-var blockHeight = 22; // Rasio diperpendek agar sudut pandang tampak lebih tinggi
+var hexRadius = 20; 
 var inMenu = true;
 
 var canvas = document.getElementById('game-canvas');
@@ -437,22 +429,41 @@ var ctx = canvas.getContext('2d');
 
 function resizeCanvas() {
     if (!canvas.parentElement) return;
-    canvas.width = canvas.parentElement.clientWidth;
-    canvas.height = canvas.parentElement.clientHeight;
     
-    blockWidth = Math.min(canvas.width / (COLS + 1.5), 48);
-    blockHeight = blockWidth * 0.45; // Mengubah tampilan perspektif lebih tegak dari atas
+    var dpr = window.devicePixelRatio || 1;
+    var rect = canvas.parentElement.getBoundingClientRect();
+    
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+    canvas.style.width = rect.width + 'px';
+    canvas.style.height = rect.height + 'px';
+    
+    ctx.scale(dpr, dpr);
+    
+    var minDim = Math.min(rect.width, rect.height);
+    hexRadius = Math.max(16, Math.floor(minDim / 22));
 }
 window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
 
-function getBlockCoordinates(r, c) {
-    var startX = canvas.width / 2;
-    var startY = canvas.height / 2 - (ROWS * blockHeight * 0.2);
+function getHexCoordinates(r, c) {
+    var rect = canvas.parentElement.getBoundingClientRect();
+    var hexWidth = Math.sqrt(3) * hexRadius;
+    var hexHeight = 2 * hexRadius * 0.75;
     
-    var isoX = startX + (c - r) * (blockWidth * 0.5);
-    var isoY = startY + (c + r) * (blockHeight * 0.5);
-    return { x: isoX, y: isoY };
+    var boardWidth = COLS * hexWidth;
+    var boardHeight = ROWS * hexHeight;
+
+    var startX = (rect.width - boardWidth) / 2 + hexWidth / 2;
+    var startY = (rect.height - boardHeight) / 2 + hexRadius + 30;
+
+    var x = startX + c * hexWidth;
+    if (r % 2 === 1) {
+        x += hexWidth / 2;
+    }
+    var y = startY + r * hexHeight;
+
+    return { x: x, y: y };
 }
 
 function initGrid() {
@@ -464,112 +475,137 @@ function initGrid() {
         }
     }
     mousePos = { r: Math.floor(ROWS / 2), c: Math.floor(COLS / 2) };
-    var startCoord = getBlockCoordinates(mousePos.r, mousePos.c);
+    var startCoord = getHexCoordinates(mousePos.r, mousePos.c);
     animatedMousePos = { x: startCoord.x, y: startCoord.y };
     
-    // SESUAIKAN TINGKAT KESULITAN BERDASARKAN LEVEL
-    // Level awal dapat bantuan rintangan lebih banyak, level tinggi rintangan lebih sedikit
-    var baseObstacles = Math.max(5, 18 - Math.floor(currentLevel * 0.25));
+    var baseObstacles = Math.max(8, 16 - Math.floor(currentLevel * 0.3));
     var count = 0;
     while (count < baseObstacles) {
         var rr = Math.floor(Math.random() * ROWS);
         var cc = Math.floor(Math.random() * COLS);
         if ((rr !== mousePos.r || cc !== mousePos.c) && !grid[rr][cc].blocked) {
             grid[rr][cc].blocked = true;
-            grid[rr][cc].height = 12;
-            grid[rr][cc].targetHeight = 12;
+            grid[rr][cc].elevation = 24;
+            grid[rr][cc].targetElevation = 24;
             count++;
         }
     }
-    initParticles(getThemeByLevel(currentLevel).particleType);
+    initParticles();
 }
 
-function drawMinecraftBlock3D(x, y, w, h, block) {
+function drawHexagon(x, y, radius, block) {
     ctx.save();
     
-    block.height += (block.targetHeight - block.height) * 0.25;
-    var currY = y - block.height;
+    block.elevation += (block.targetElevation - block.elevation) * 0.25;
+    var currentY = y - block.elevation;
+    var theme = THEMES[(currentLevel - 1) % THEMES.length];
 
-    var halfW = w / 2;
-    var halfH = h / 2;
-    var depth = 12 + block.height * 0.3; // Sisi 3D dibuat agak tipis agar sudut pandang dari atas makin maksimal
+    var isBlocked = block.blocked;
+    var wallHeight = isBlocked ? 28 : 9;
 
-    var theme = getThemeByLevel(currentLevel);
-
-    // SISI KIRI 3D
-    ctx.fillStyle = theme.sideColor;
+    // 1. TEBING SAMPING
+    ctx.fillStyle = isBlocked ? "#3a230f" : theme.wallSide;
     ctx.beginPath();
-    ctx.moveTo(x - halfW, currY);
-    ctx.lineTo(x, currY + halfH);
-    ctx.lineTo(x, currY + halfH + depth);
-    ctx.lineTo(x - halfW, currY + depth);
-    ctx.closePath();
-    ctx.fill();
-    ctx.strokeStyle = "rgba(0,0,0,0.18)";
-    ctx.stroke();
+    for (var i = 1; i <= 4; i++) {
+        var angle1 = (Math.PI / 3) * (i - 1) - Math.PI / 6;
+        var angle2 = (Math.PI / 3) * i - Math.PI / 6;
+        var hx1 = x + radius * Math.cos(angle1);
+        var hy1 = currentY + radius * Math.sin(angle1);
+        var hx2 = x + radius * Math.cos(angle2);
+        var hy2 = currentY + radius * Math.sin(angle2);
 
-    // SISI KANAN 3D
-    ctx.fillStyle = "rgba(0,0,0,0.22)";
-    ctx.beginPath();
-    ctx.moveTo(x, currY + halfH);
-    ctx.lineTo(x + halfW, currY);
-    ctx.lineTo(x + halfW, currY + depth);
-    ctx.lineTo(x, currY + halfH + depth);
-    ctx.closePath();
-    ctx.fill();
-    ctx.fillStyle = theme.sideColor;
-    ctx.fill();
-
-    // PERMUKAAN ATAS
-    ctx.beginPath();
-    ctx.moveTo(x, currY - halfH);
-    ctx.lineTo(x + halfW, currY);
-    ctx.lineTo(x, currY + halfH);
-    ctx.lineTo(x - halfW, currY);
-    ctx.closePath();
-    
-    ctx.fillStyle = (block.r + block.c) % 2 === 0 ? theme.topLight : theme.topDark;
-    ctx.fill();
-    ctx.strokeStyle = "rgba(255,255,255,0.35)";
-    ctx.lineWidth = 1.2;
-    ctx.stroke();
-
-    if (theme.hasSnowCap) {
-        ctx.fillStyle = "rgba(255, 255, 255, 0.85)";
-        ctx.beginPath();
-        ctx.moveTo(x, currY - halfH);
-        ctx.lineTo(x + halfW * 0.8, currY - halfH * 0.2);
-        ctx.lineTo(x, currY + halfH * 0.6);
-        ctx.lineTo(x - halfW * 0.8, currY - halfH * 0.2);
-        ctx.closePath();
-        ctx.fill();
+        ctx.moveTo(hx1, hy1);
+        ctx.lineTo(hx2, hy2);
+        ctx.lineTo(hx2, hy2 + wallHeight);
+        ctx.lineTo(hx1, hy1 + wallHeight);
     }
+    ctx.closePath();
+    ctx.fill();
+
+    // 2. TEBING DEPAN
+    ctx.fillStyle = isBlocked ? "#72471d" : theme.wallFront;
+    ctx.beginPath();
+    for (var i = 2; i <= 3; i++) {
+        var angle1 = (Math.PI / 3) * (i - 1) - Math.PI / 6;
+        var angle2 = (Math.PI / 3) * i - Math.PI / 6;
+        var hx1 = x + radius * Math.cos(angle1);
+        var hy1 = currentY + radius * Math.sin(angle1);
+        var hx2 = x + radius * Math.cos(angle2);
+        var hy2 = currentY + radius * Math.sin(angle2);
+
+        ctx.moveTo(hx1, hy1);
+        ctx.lineTo(hx2, hy2);
+        ctx.lineTo(hx2, hy2 + wallHeight);
+        ctx.lineTo(hx1, hy1 + wallHeight);
+    }
+    ctx.closePath();
+    ctx.fill();
+
+    // 3. PERMUKAAN ATAS BLOCK
+    if (isBlocked) {
+        var wallGrad = ctx.createLinearGradient(x - radius, currentY - radius, x + radius, currentY + radius);
+        wallGrad.addColorStop(0, "#e7c169");
+        wallGrad.addColorStop(1, "#b58122");
+        ctx.fillStyle = wallGrad;
+    } else {
+        var grad = ctx.createLinearGradient(x - radius, currentY - radius, x + radius, currentY + radius);
+        grad.addColorStop(0, theme.grassTop1);
+        grad.addColorStop(1, theme.grassTop2);
+        ctx.fillStyle = grad;
+    }
+
+    ctx.beginPath();
+    for (var i = 0; i < 6; i++) {
+        var angle = (Math.PI / 3) * i - Math.PI / 6;
+        var hx = x + (radius - 0.5) * Math.cos(angle);
+        var hy = currentY + (radius - 0.5) * Math.sin(angle);
+        if (i === 0) ctx.moveTo(hx, hy);
+        else ctx.lineTo(hx, hy);
+    }
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.strokeStyle = isBlocked ? "#fff0c2" : theme.stroke;
+    ctx.lineWidth = 1.8;
+    ctx.stroke();
 
     ctx.restore();
 }
 
-function drawMouseHD() {
-    var targetCoord = getBlockCoordinates(mousePos.r, mousePos.c);
+function drawMouse() {
+    var targetCoord = getHexCoordinates(mousePos.r, mousePos.c);
     
-    animatedMousePos.x += (targetCoord.x - animatedMousePos.x) * 0.25;
-    animatedMousePos.y += (targetCoord.y - animatedMousePos.y) * 0.25;
+    // Pergerakan presisi step-by-step
+    animatedMousePos.x += (targetCoord.x - animatedMousePos.x) * 0.4;
+    animatedMousePos.y += (targetCoord.y - animatedMousePos.y) * 0.4;
 
-    var currentBlock = grid[mousePos.r][mousePos.c];
-    var mouseY = animatedMousePos.y - currentBlock.height;
-    var size = blockWidth * 1.2;
+    // Ukuran tikus pas & proporsional
+    var size = hexRadius * 2.6; 
 
     ctx.save();
-    ctx.fillStyle = "rgba(0,0,0,0.3)";
+    
+    // Bayangan di permukaan atas block
+    var currentBlock = grid[mousePos.r][mousePos.c];
+    var currentBlockY = animatedMousePos.y - (currentBlock ? currentBlock.elevation : 0);
+
+    ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
     ctx.beginPath();
-    ctx.ellipse(animatedMousePos.x, mouseY + 3, size * 0.22, size * 0.11, 0, 0, Math.PI * 2);
+    ctx.ellipse(animatedMousePos.x, currentBlockY + 2, hexRadius * 0.5, hexRadius * 0.25, 0, 0, Math.PI * 2);
     ctx.fill();
 
+    // Posisi Y diangkat supaya kaki menginjak rumput dengan pas
     if (imgAssets.mouse && imgAssets.mouse.complete && imgAssets.mouse.naturalWidth !== 0) {
-        ctx.drawImage(imgAssets.mouse, animatedMousePos.x - size / 2, mouseY - size * 0.75, size, size);
+        ctx.drawImage(
+            imgAssets.mouse, 
+            animatedMousePos.x - size / 2, 
+            currentBlockY - size / 1.05, 
+            size, 
+            size
+        );
     } else {
-        ctx.fillStyle = '#e74c3c';
+        ctx.fillStyle = '#ff80bf';
         ctx.beginPath();
-        ctx.arc(animatedMousePos.x, mouseY - 14, 12, 0, Math.PI * 2);
+        ctx.arc(animatedMousePos.x, currentBlockY - hexRadius * 0.5, hexRadius * 0.7, 0, Math.PI * 2);
         ctx.fill();
     }
     ctx.restore();
@@ -577,41 +613,78 @@ function drawMouseHD() {
 
 function render() {
     if (inMenu) return;
-    var theme = getThemeByLevel(currentLevel);
 
-    var bgGrad = ctx.createLinearGradient(0, 0, 0, canvas.height);
-    bgGrad.addColorStop(0, theme.bgTop);
-    bgGrad.addColorStop(1, theme.bgBottom);
-    ctx.fillStyle = bgGrad;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    var rect = canvas.parentElement.getBoundingClientRect();
+    ctx.clearRect(0, 0, rect.width, rect.height);
 
-    updateAndDrawParticles(theme.particleType);
+    var theme = THEMES[(currentLevel - 1) % THEMES.length];
+    var bgGradient = ctx.createRadialGradient(
+        rect.width / 2, rect.height / 2, 40,
+        rect.width / 2, rect.height / 2, rect.height
+    );
+    bgGradient.addColorStop(0, theme.bgGradient[0]);
+    bgGradient.addColorStop(1, theme.bgGradient[1]);
+
+    ctx.fillStyle = bgGradient;
+    ctx.fillRect(0, 0, rect.width, rect.height);
+
+    updateAndDrawParticles();
+
+    var renderList = [];
 
     for (var r = 0; r < ROWS; r++) {
         for (var c = 0; c < COLS; c++) {
             var block = grid[r][c];
-            var coord = getBlockCoordinates(r, c);
-            block.x = coord.x; block.y = coord.y;
-            drawMinecraftBlock3D(coord.x, coord.y, blockWidth, blockHeight, block);
-            
-            if (r === mousePos.r && c === mousePos.c) {
-                drawMouseHD();
-            }
+            var coord = getHexCoordinates(r, c);
+            block.x = coord.x; 
+            block.y = coord.y;
+            renderList.push({
+                type: 'block',
+                sortY: coord.y,
+                data: block
+            });
         }
     }
+
+    var mouseCoord = getHexCoordinates(mousePos.r, mousePos.c);
+    renderList.push({
+        type: 'mouse',
+        sortY: mouseCoord.y + 0.1,
+    });
+
+    renderList.sort(function(a, b) {
+        return a.sortY - b.sortY;
+    });
+
+    renderList.forEach(function(item) {
+        if (item.type === 'block') {
+            drawHexagon(item.data.x, item.data.y, hexRadius, item.data);
+        } else if (item.type === 'mouse') {
+            drawMouse();
+        }
+    });
 
     if (!isPaused) requestAnimationFrame(render);
 }
 
 function getNeighbors(r, c) {
-    var dirs = [
-        {r:-1, c:0}, {r:1, c:0},
-        {r:0, c:-1}, {r:0, c:1}
+    var isOdd = (r % 2 === 1);
+    var dirs = isOdd ? [
+        {r:-1, c:0}, {r:-1, c:1},
+        {r:0, c:-1}, {r:0, c:1},
+        {r:1, c:0}, {r:1, c:1}
+    ] : [
+        {r:-1, c:-1}, {r:-1, c:0},
+        {r:0, c:-1}, {r:0, c:1},
+        {r:1, c:-1}, {r:1, c:0}
     ];
+
     var res = [];
     dirs.forEach(function(d) {
         var nr = r + d.r, nc = c + d.c;
-        if (nr >= 0 && nr < ROWS && nc >= 0 && nc < COLS) res.push({ r: nr, c: nc });
+        if (nr >= 0 && nr < ROWS && nc >= 0 && nc < COLS) {
+            res.push({ r: nr, c: nc });
+        }
     });
     return res;
 }
@@ -688,7 +761,6 @@ function showEndModal(isWin) {
 
 function startLevel() {
     inMenu = false; gameOver = false; isPaused = false;
-    var currentTheme = getThemeByLevel(currentLevel);
     
     var mainMenu = document.getElementById('main-menu');
     var gameModal = document.getElementById('game-modal');
@@ -702,8 +774,9 @@ function startLevel() {
     if (pauseModal) pauseModal.style.display = 'none';
     if (uiHeader) uiHeader.style.display = 'flex';
     
+    var currentTheme = THEMES[(currentLevel - 1) % THEMES.length];
     if (levelBadge) levelBadge.innerText = 'LEVEL ' + currentLevel;
-    if (themeTitle) themeTitle.innerText = currentTheme.name;
+    if (themeTitle) themeTitle.innerText = currentTheme.title;
     
     resizeCanvas();
     initGrid();
@@ -729,7 +802,9 @@ if (btnHome) btnHome.onclick = function() {
     if (g) g.style.display = 'none';
     if (u) u.style.display = 'none';
     if (m) m.style.display = 'flex';
-    inMenu = true; isPaused = true; ctx.clearRect(0, 0, canvas.width, canvas.height);
+    inMenu = true; isPaused = true; 
+    var rect = canvas.parentElement.getBoundingClientRect();
+    ctx.clearRect(0, 0, rect.width, rect.height);
 };
 
 if (btnPause) btnPause.onclick = function() { playAudio('clickUI'); isPaused = true; var p = document.getElementById('pause-modal'); if (p) p.style.display = 'flex'; };
@@ -740,7 +815,7 @@ if (btnSound) btnSound.onclick = function(e) {
     playAudio('clickUI');
     if (audioAssets.bgm) {
         audioAssets.bgm.muted = !audioAssets.bgm.muted;
-        e.target.innerText = audioAssets.bgm.muted ? '🔇' : '🔊';
+        if (e && e.target) e.target.innerText = audioAssets.bgm.muted ? '🔇' : '🔊';
     }
 };
 
@@ -748,10 +823,10 @@ var bgmVol = document.getElementById('bgm-vol');
 var sfxVol = document.getElementById('sfx-vol');
 
 if (bgmVol) bgmVol.oninput = function(e) { 
-    if (audioAssets.bgm) audioAssets.bgm.volume = parseFloat(e.target.value); 
+    if (audioAssets.bgm && e && e.target) audioAssets.bgm.volume = parseFloat(e.target.value); 
 };
 if (sfxVol) sfxVol.oninput = function(e) { 
-    sfxVolume = parseFloat(e.target.value); 
+    if (e && e.target) sfxVolume = parseFloat(e.target.value); 
 };
 
 function handlePointerInput(clientX, clientY) {
@@ -763,11 +838,11 @@ function handlePointerInput(clientX, clientY) {
     for (var r = 0; r < ROWS; r++) {
         for (var c = 0; c < COLS; c++) {
             var block = grid[r][c];
-            var dist = Math.hypot(block.x - clickX, block.y - clickY);
-            if (dist < blockWidth * 0.48 && !block.blocked && (r !== mousePos.r || c !== mousePos.c)) {
+            var dist = Math.hypot(block.x - clickX, block.y - (clickY + block.elevation));
+            if (dist < hexRadius * 1.15 && !block.blocked && (r !== mousePos.r || c !== mousePos.c)) {
                 playAudio('grass');
                 block.blocked = true;
-                block.targetHeight = 12;
+                block.targetElevation = 24;
                 moveMouse();
                 return;
             }
